@@ -416,9 +416,7 @@ function dibujarFilaIntento(jugador) {
     const sagaSecreta = jugadorSecreto.saga || "IE1";
     const logoSagaArchivo = jugador.logoSaga || "aaaa.webp";
     const logoSagaHtml = '<div style="width:155px; height:78px; margin:0 auto; display:flex; align-items:center; justify-content:center;"><img src="' + logoSagaArchivo + '" style="width:100%; height:100%; object-fit:contain;"></div>';
-    fila.appendChild(crearCelda(sagaJugador, sagaSecreta, logoSagaHtml));
-
-  fila.appendChild(crearCelda(sagaJugador, sagaSecreta, logoSagaHtml));
+   fila.appendChild(crearCelda(sagaJugador, sagaSecreta, logoSagaHtml));
 
 
     listaIntentos.insertBefore(fila, listaIntentos.firstChild);

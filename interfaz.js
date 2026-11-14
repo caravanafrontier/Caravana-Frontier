@@ -239,10 +239,13 @@ function iniciarDuelos() {
 }
 
 function obtenerDatosJugadorDuelo(nombre) {
-    const enLista = jugadores.find(j => j.nombre === nombre);
-    if (enLista) return enLista;
+    if (typeof jugadores !== "undefined" && Array.isArray(jugadores)) {
+        const enLista = jugadores.find(j => j.nombre === nombre);
+        if (enLista) return enLista;
+    }
     return { nombre: nombre, equipo: "", foto: fotosExtraDuelos[nombre] || "" };
 }
+
 
 function cargarDueloActual() {
     dueloRespondido = false;

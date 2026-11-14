@@ -485,10 +485,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Enter") {
         e.preventDefault();
         const primeraSugerencia = cajaSugerencias.querySelector("div");
-        if (primeraSugerencia) {
+               if (primeraSugerencia) {
           primeraSugerencia.click();
-
+        }
+      }
     });
   }
 });
-

@@ -478,6 +478,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 cajaSugerencias.appendChild(item);
                       });
         });
-    }
+           // Seleccionar el primer jugador automáticamente al pulsar Enter
+    inputBuscador.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const primeraSugerencia = cajaSugerencias.querySelector("div");
+        if (primeraSugerencia) {
+          primeraSugerencia.click();
+
+    });
+  }
 });
 

@@ -425,8 +425,16 @@ var jugadores = [
     { nombre: "Carrie McCuring", equipo: "Épsilon", posicion: "Delantero", elemento: "Aire", foto: "mercury.webp", logoEquipo: "logo_epsilon.webp", logoPosicion: "DL.webp", logoElemento: "Aire.webp", saga: "IE2", logoSaga: "saga_ie2.webp" },
     { nombre: "Ronny Metcalf", equipo: "Épsilon", posicion: "Centrocampista", elemento: "Aire", foto: "metron.webp", logoEquipo: "logo_epsilon.webp", logoPosicion: "MD.webp", logoElemento: "Aire.webp", saga: "IE2", logoSaga: "saga_ie2.webp" },
     { nombre: "Zeke Valanche", equipo: "Épsilon", posicion: "Delantero", elemento: "Aire", foto: "zell.webp", logoEquipo: "logo_epsilon.webp", logoPosicion: "DL.webp", logoElemento: "Aire.webp", saga: "IE2", logoSaga: "saga_ie2.webp" }
+  ];
+jugadores.forEach(j => {
+    if (j.logoEquipo === "logo_polvo_diamantes.webp") j.logoEquipo = "logo_diamantes.webp";
+    if (j.logoEquipo === "logo_tormenta_geminis.webp") j.logoEquipo = "logo_geminis.webp";
+    if (j.logoEquipo === "logo_mary_times.webp") j.logoEquipo = "logo_marytimes.webp";
+    
+    if (j.equipo === "Mary Times") j.equipo = "Instituto Mary Times";
+    if (j.equipo === "Fauxshore") j.equipo = "Instituto Fauxshore";
+});
 
-];
 
 let jugadoresIntentados = [];
 let listaDesordenadaPorDia = [];

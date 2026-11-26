@@ -138,18 +138,20 @@
                 <option value="343">Formación Ofensiva (3-4-3)</option>
             </select>
 
-            <label>Selecciona Entrenador:</label>
-            <select id="select-entrenador" onchange="actualizarFotoEntrenador()">
-                <option value="hillman">Seymour Hillman</option>
-                <option value="lina">Aquilina "Lina" Schiller</option>
-                <option value="travis">Percival Travis</option>
-                       <div class="foto-entrenador-preview" id="preview-foto-entrenador" style="width: 60px; height: 60px; min-width: 60px; max-width: 60px; overflow: hidden;">
+                  <label>Selecciona Entrenador:</label>
+        <select id="select-entrenador" onchange="actualizarFotoEntrenador()">
+            <option value="hillman">Seymour Hillman</option>
+            <option value="lina">Aquilina "Lina" Schiller</option>
+            <option value="travis">Percival Travis</option>
+        </select>
+        <div class="contenedor-entrenador-vista">
+            <div class="foto-entrenador-preview" id="preview-foto-entrenador" style="width: 60px; height: 60px; min-width: 60px; max-width: 60px; overflow: hidden;">
                 <img src="hillman.webp" style="width: 60px; height: 60px; object-fit: cover;">
             </div>
-                <div class="foto-entrenador-preview" id="preview-foto-entrenador">👴</div>
-                <div style="text-align: left;"><span style="font-size: 12px; color: #aaaaaa;">Entrenador Activo:</span><br><strong id="nombre-entrenador-texto" style="color: #4cc9f0;">Seymour Hillman</strong></div>
-            </div>
+            <div style="text-align: left;"><span style="font-size: 12px; color: #aaaaaa;">Entrenador Activo:</span><br><strong id="nombre-entrenador-texto" style="color: #4cc9f0;">Seymour Hillman</strong></div>
         </div>
+    </div>
+
 
         <div class="campo-futbol">
             <div class="linea-medio"></div>

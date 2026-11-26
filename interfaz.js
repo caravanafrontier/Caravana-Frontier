@@ -174,68 +174,39 @@ function exportarAlineacion() {
 
     alert(mensaje);
 }
-// ==========================================
-// MODO 4: ¿QUIÉN ES MEJOR? (DUELOS)
-// ==========================================
-const fotosExtraDuelos = {
-    "Shawn Froste": "shawn.webp",
-    "Hector Helio": "hector.webp",
-    "Jude Sharp": "jude.webp",
-    "Caleb Stonewall": "caleb.webp",
-    "Xavier Foster": "xavier.webp",
-    "Torch": "torch.webp",
-    "Gazelle": "gazelle.webp",
-    "Paolo Bianchi": "paolo.webp",
-    "Edgar Partinus": "edgar.webp",
-    "Arion Sherwind": "arion.webp",
-    "Victor Blade": "victor.webp",
-    "Bai Long": "bailong.webp",
-    "Tezcat": "tezcat.webp",
-    "Zanark Avalonic": "zanark.webp",
-    "Simeon Ayp (Saru)": "saru.webp",
-    "Fei Rune": "fei.webp",
-    "Sol Daystar": "sol.webp",
-    "Riccardo Di Rigo": "riccardo.webp",
-    "Goldie Lemmon": "goldie.webp",
-    "Gabriel García (Gabi)": "gabi.webp",
-    "Jean-Pierre Lapin (JP)": "jp.webp",
-    "Terry Archibald": "terry.webp",
-    "Ozrock Varga": "ozrock.webp",
-    "Sonny Wright (Asuto)": "asuto.webp",
-    "Elliot Ember (Haizaki)": "haizaki.webp",
-    "Heath Moore (Nosaka)": "nosaka.webp",
-    "Aiden Froste": "aiden.webp"
-};
-
+// ------------------------------------------------------------------
+// MODO 4: ¿QUIÉN ES MEJOR? (DUELOS IE 1 Y 2 - SIN REPETICIONES)
+// ------------------------------------------------------------------
 const duelosPersonalizados = [
-    { jugador1: "Axel Blaze", porcentaje1: 56, jugador2: "Shawn Froste", porcentaje2: 44 },
-    { jugador1: "Mark Evans", porcentaje1: 71, jugador2: "Hector Helio", porcentaje2: 29 },
-    { jugador1: "Jude Sharp", porcentaje1: 62, jugador2: "Caleb Stonewall", porcentaje2: 38 },
-    { jugador1: "Byron Love", porcentaje1: 63, jugador2: "Xavier Foster", porcentaje2: 37 },
-    { jugador1: "Torch", porcentaje1: 61, jugador2: "Gazelle", porcentaje2: 39 },
-    { jugador1: "Paolo Bianchi", porcentaje1: 89, jugador2: "Edgar Partinus", porcentaje2: 11 },
-    { jugador1: "Bash Lancer", porcentaje1: 30, jugador2: "Mark Evans", porcentaje2: 70 },
-    { jugador1: "Arion Sherwind", porcentaje1: 53, jugador2: "Victor Blade", porcentaje2: 47 },
-    { jugador1: "Bai Long", porcentaje1: 64, jugador2: "Tezcat", porcentaje2: 36 },
-    { jugador1: "Zanark Avalonic", porcentaje1: 68, jugador2: "Simeon Ayp", porcentaje2: 32 },
-    { jugador1: "Fei Rune", porcentaje1: 36, jugador2: "Sol Daystar", porcentaje2: 64 },
-    { jugador1: "Riccardo Di Rigo", porcentaje1: 28, jugador2: "Jude Sharp", porcentaje2: 72 },
-    { jugador1: "Goldie Lemmon", porcentaje1: 42, jugador2: "Gabriel García", porcentaje2: 58 },
-    { jugador1: "Jean-Pierre Lapin", porcentaje1: 55, jugador2: "Terry Archibald", porcentaje2: 45 },
-    { jugador1: "Ozrock Varga", porcentaje1: 33, jugador2: "Zanark Avalonic", porcentaje2: 67 },
-    { jugador1: "Sonny Wright", porcentaje1: 25, jugador2: "Elliot Ember (Haizaki)", porcentaje2: 75 },
-    { jugador1: "Heath Moore", porcentaje1: 24, jugador2: "Jude Sharp", porcentaje2: 76 },
-    { jugador1: "Axel Blaze", porcentaje1: 72, jugador2: "Elliot Ember", porcentaje2: 28 },
-    { jugador1: "Shawn Froste", porcentaje1: 45, jugador2: "Aiden Froste", porcentaje2: 55 },
-    { jugador1: "Mark Evans", porcentaje1: 78, jugador2: "Arion Sherwind", porcentaje2: 22 }
+    { jugador1: "Axel Blaze", p1: 53, jugador2: "Shawn Froste", p2: 47 },
+    { jugador1: "Mark Evans", p1: 56, jugador2: "Nelson Rockwell", p2: 44 },
+    { jugador1: "Jude Sharp", p1: 58, jugador2: "Caleb Stonewall", p2: 42 },
+    { jugador1: "Byron Love", p1: 44, jugador2: "Xavier Foster", p2: 56 },
+    { jugador1: "Claude Beacons", p1: 51, jugador2: "Bryce Whitingale", p2: 49 },
+    { jugador1: "Dave Quagmire", p1: 57, jugador2: "Joseph King", p2: 43 },
+    { jugador1: "Nathan Swift", p1: 54, jugador2: "Hurley Kane", p2: 46 },
+    { jugador1: "Jordan Greenway", p1: 43, jugador2: "Erik Eagle", p2: 57 },
+    { jugador1: "David Samford", p1: 56, jugador2: "Kevin Dragonfly", p2: 44 },
+    { jugador1: "Isabelle Trick", p1: 58, jugador2: "Wilbur Watkins", p2: 42 },
+    { jugador1: "Jack Wallside", p1: 55, jugador2: "Scott Banyan", p2: 45 },
+    { jugador1: "Darren LaChance", p1: 59, jugador2: "Thomas Feldt", p2: 41 },
+    { jugador1: "Bobby Shearer", p1: 54, jugador2: "Malcolm Night", p2: 46 },
+    { jugador1: "Victoria Vanguard", p1: 53, jugador2: "Suzette Hartland", p2: 47 },
+    { jugador1: "Albert Denver", p1: 52, jugador2: "Ben North", p2: 48 },
+    { jugador1: "Zeke Valanche", p1: 55, jugador2: "Carrie McCuring", p2: 45 },
+    { jugador1: "Marvin Murdock", p1: 52, jugador2: "Thomas Murdock", p2: 48 },
+    { jugador1: "Seymour Hillman", p1: 62, jugador2: "Paul Siddon", p2: 38 },
+    { jugador1: "Nigel August", p1: 51, jugador2: "Grant Cook", p2: 49 },
+    { jugador1: "Shadow Cimmerian", p1: 53, jugador2: "William Glass", p2: 47 }
 ];
 
-let indiceDueloActual = 0;
+let votosDuelosGuardados = JSON.parse(localStorage.getItem("caravana_votos_duelos")) || [];
 let dueloRespondido = false;
 
 function iniciarDuelos() {
-    indiceDueloActual = 0;
+    votosDuelosGuardados = JSON.parse(localStorage.getItem("caravana_votos_duelos")) || [];
     cargarDueloActual();
+    renderizarHistorialDuelos();
 }
 
 function obtenerDatosJugadorDuelo(nombre) {
@@ -243,53 +214,101 @@ function obtenerDatosJugadorDuelo(nombre) {
         const enLista = jugadores.find(j => j.nombre === nombre);
         if (enLista) return enLista;
     }
-    return { nombre: nombre, equipo: "", foto: fotosExtraDuelos[nombre] || "" };
+    return { nombre: nombre, posicion: "Jugador", equipo: "Inazuma Eleven", foto: "" };
 }
-
 
 function cargarDueloActual() {
     dueloRespondido = false;
-    document.getElementById("btn-siguiente-duelo").style.display = "none";
+    const indiceActual = votosDuelosGuardados.length;
+    const zonaActiva = document.getElementById("zona-duelo-activo");
+    const subtitulo = document.getElementById("subtitulo-duelos");
+
+    if (indiceActual >= duelosPersonalizados.length) {
+        zonaActiva.style.display = "none";
+        subtitulo.innerText = "✅ Ya has completado todos los duelos. Este es tu historial bloqueado:";
+        return;
+    }
+
+    zonaActiva.style.display = "flex";
+    subtitulo.innerText = `Duelo ${indiceActual + 1} de ${duelosPersonalizados.length} • Elige a tu favorito`;
+
     document.getElementById("duelo-porcentaje-1").style.display = "none";
     document.getElementById("duelo-porcentaje-2").style.display = "none";
     document.getElementById("duelo-card-1").style.borderColor = "#4cc9f0";
     document.getElementById("duelo-card-2").style.borderColor = "#4cc9f0";
 
-    const duelo = duelosPersonalizados[indiceDueloActual];
+    const duelo = duelosPersonalizados[indiceActual];
     const j1 = obtenerDatosJugadorDuelo(duelo.jugador1);
     const j2 = obtenerDatosJugadorDuelo(duelo.jugador2);
 
     document.getElementById("duelo-img-1").src = j1.foto;
     document.getElementById("duelo-nombre-1").innerText = j1.nombre;
-    document.getElementById("duelo-equipo-1").innerText = j1.equipo;
-    document.getElementById("duelo-porcentaje-1").innerText = duelo.porcentaje1 + "%";
+    document.getElementById("duelo-posicion-1").innerText = j1.posicion || "";
+    document.getElementById("duelo-equipo-1").innerText = j1.equipo || "";
+    document.getElementById("duelo-porcentaje-1").innerText = duelo.p1 + "%";
 
     document.getElementById("duelo-img-2").src = j2.foto;
     document.getElementById("duelo-nombre-2").innerText = j2.nombre;
-    document.getElementById("duelo-equipo-2").innerText = j2.equipo;
-    document.getElementById("duelo-porcentaje-2").innerText = duelo.porcentaje2 + "%";
+    document.getElementById("duelo-posicion-2").innerText = j2.posicion || "";
+    document.getElementById("duelo-equipo-2").innerText = j2.equipo || "";
+    document.getElementById("duelo-porcentaje-2").innerText = duelo.p2 + "%";
 }
 
 function elegirEnDuelo(opcion) {
-    if (dueloRespondido) return;
+    const indiceActual = votosDuelosGuardados.length;
+    if (dueloRespondido || indiceActual >= duelosPersonalizados.length) return;
     dueloRespondido = true;
+
+    const duelo = duelosPersonalizados[indiceActual];
+    const elegido = opcion === 1 ? duelo.jugador1 : duelo.jugador2;
+    const descartado = opcion === 1 ? duelo.jugador2 : duelo.jugador1;
 
     document.getElementById("duelo-porcentaje-1").style.display = "block";
     document.getElementById("duelo-porcentaje-2").style.display = "block";
+    document.getElementById(opcion === 1 ? "duelo-card-1" : "duelo-card-2").style.borderColor = "#2a9d8f";
 
-    if (opcion === 1) {
-        document.getElementById("duelo-card-1").style.borderColor = "#2a9d8f";
-    } else {
-        document.getElementById("duelo-card-2").style.borderColor = "#2a9d8f";
-    }
+    votosDuelosGuardados.push({
+        dueloNum: indiceActual + 1,
+        elegido: elegido,
+        descartado: descartado
+    });
+    localStorage.setItem("caravana_votos_duelos", JSON.stringify(votosDuelosGuardados));
 
-    document.getElementById("btn-siguiente-duelo").style.display = "inline-block";
+    setTimeout(() => {
+        cargarDueloActual();
+        renderizarHistorialDuelos();
+    }, 1100);
 }
 
-function siguienteDuelo() {
-    indiceDueloActual++;
-    if (indiceDueloActual >= duelosPersonalizados.length) {
-        indiceDueloActual = 0;
+function renderizarHistorialDuelos() {
+    const contenedor = document.getElementById("historial-duelos");
+    if (!contenedor) return;
+
+    if (votosDuelosGuardados.length === 0) {
+        contenedor.innerHTML = "";
+        return;
     }
-    cargarDueloActual();
+
+    let html = `<h3 style="color:#4cc9f0; border-bottom:1px solid #3a506b; padding-bottom:8px; margin-bottom:12px;">📋 Tu historial de elecciones (${votosDuelosGuardados.length}/${duelosPersonalizados.length})</h3>`;
+
+    votosDuelosGuardados.forEach(v => {
+        const jElegido = obtenerDatosJugadorDuelo(v.elegido);
+        const jDescartado = obtenerDatosJugadorDuelo(v.descartado);
+
+        html += `
+            <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(11,19,43,0.9); border:1px solid #3a506b; border-radius:8px; padding:10px 14px; margin-bottom:8px;">
+                <div style="display:flex; align-items:center; gap:10px; color:#52b788; font-weight:bold;">
+                    <img src="${jElegido.foto}" style="width:36px; height:36px; border-radius:6px; object-fit:cover; border:2px solid #52b788;">
+                    <span>✅ ${v.elegido}</span>
+                </div>
+                <span style="color:#6c757d; font-size:12px; font-weight:bold;">VS</span>
+                <div style="display:flex; align-items:center; gap:10px; color:#adb5bd; opacity:0.65;">
+                    <span>❌ ${v.descartado}</span>
+                    <img src="${jDescartado.foto}" style="width:36px; height:36px; border-radius:6px; object-fit:cover; filter:grayscale(100%);">
+                </div>
+            </div>
+        `;
+    });
+
+    contenedor.innerHTML = html;
 }

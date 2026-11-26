@@ -9,16 +9,16 @@
         .logo-principal { max-width: 340px; width: 90%; height: auto; margin: 0 auto 10px auto; display: block; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7)); transition: transform 0.3s ease; }
         .logo-principal:hover { transform: scale(1.03); }
         
-        /* MENÚ PRINCIPAL */
-        #menu-principal { max-width: 850px; margin: 40px auto; }
-        .grid-modos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
-        .tarjeta-modo { background: rgba(28, 37, 65, 0.9); border: 2px solid #4cc9f0; border-radius: 12px; padding: 15px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; }
-        .tarjeta-modo:hover { transform: translateY(-5px); border-color: #ff9e00; box-shadow: 0 6px 15px rgba(255, 158, 0, 0.4); }
-        .tarjeta-modo img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; background-color: #0b132b; border: 1px solid #3a506b; }
-        .tarjeta-modo h3 { margin: 0; font-size: 18px; color: #ffffff; }
+             /* MENÚ PRINCIPAL */
+        #pantalla-menu { max-width: 850px; margin: 30px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .btn-modo { background: rgba(28, 37, 65, 0.9); border: 2px solid #4cc9f0; border-radius: 12px; padding: 15px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; color: white; font-family: inherit; }
+        .btn-modo:hover { transform: translateY(-5px); border-color: #ff9e00; box-shadow: 0 6px 15px rgba(255, 158, 0, 0.4); }
+        .btn-modo img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; background-color: #0b132b; border: 1px solid #3a506b; }
+        .btn-modo span { font-size: 17px; font-weight: bold; color: #ffffff; }
 
         /* PANTALLAS DE JUEGO */
-        #pantalla-adivinar, #pantalla-equipos, #pantalla-tecnicas, #pantalla-duelos, #pantalla-conexiones { display: none; }
+        #pantalla-juego, #pantalla-creador-equipo, #pantalla-tecnicas, #pantalla-duelos, #pantalla-conexiones { display: none; }
+
         .btn-volver { background: linear-gradient(180deg, #ffaa00 0%, #ff6600 100%); color: white; border: 2px solid #ffd166; padding: 10px 24px; border-radius: 10px; font-weight: bold; font-size: 14px; cursor: pointer; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
 
         /* ESTILOS ADIVINAR JUGADOR */

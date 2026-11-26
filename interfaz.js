@@ -27,8 +27,8 @@ function mostrarMenu() {
     document.getElementById("pantalla-creador-equipo").style.display = "none";
     document.getElementById("pantalla-tecnicas").style.display = "none";
         document.getElementById("pantalla-duelos").style.display = "none";
-    document.getElementById("pantalla-menu").style.display = "flex";
-}
+     document.getElementById("pantalla-menu").style.display = "grid";
+
 
 // CAMBIAR FOTO DEL ENTRENADOR EN TIEMPO REAL
 function actualizarFotoEntrenador() {

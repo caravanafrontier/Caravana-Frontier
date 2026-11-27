@@ -310,4 +310,4 @@ function renderizarHistorialDuelos() {
         `;
     });
         contenedor.innerHTML = html;
-}
+} 

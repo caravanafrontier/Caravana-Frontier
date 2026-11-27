@@ -52,7 +52,25 @@
         .slot-jugador input { font-size: 11px !important; padding: 6px !important; text-align: center; width: 100% !important; box-sizing: border-box; }
         .vista-foto-slot, .campo-futbol img { width: 55px !important; height: 55px !important; max-width: 55px !important; max-height: 55px !important; border-radius: 6px; overflow: hidden; margin: 0 auto 5px auto; background: #0b132b; border: 1px dashed #4cc9f0; object-fit: cover !important; display: block; }
         .btn-exportar { background: linear-gradient(135deg, #f77f00, #d62828); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; margin-bottom: 30px; }
-    </style>
+           /* ESTILOS DIFICULTAD, DÍAS Y TABLA DE ADIVINA EL JUGADOR */
+        .contenedor-dificultad { display: flex; justify-content: center; gap: 12px; margin: 15px auto; flex-wrap: wrap; }
+        .btn-dif { background: #1c2541; color: white; border: 2px solid #4cc9f0; padding: 8px 18px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 14px; transition: 0.2s; }
+        .btn-dif:hover { transform: scale(1.05); border-color: #ff9e00; }
+        .btn-dif.activo { background: linear-gradient(135deg, #ffaa00, #ff6600); border-color: #ffd166; color: #0b132b; }
+
+        .contenedor-dias { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 750px; margin: 15px auto; }
+        .btn-dia { background: rgba(28, 37, 65, 0.9); color: white; border: 2px solid #3a506b; border-radius: 8px; padding: 8px 12px; font-weight: bold; font-size: 13px; cursor: pointer; transition: 0.2s; }
+        .btn-dia:hover { border-color: #4cc9f0; transform: translateY(-2px); }
+        .btn-dia.activo, .btn-dia.dia-activo { background: #4cc9f0; color: #0b132b; border-color: #ffffff; }
+        .btn-dia.completado { background: #2a9d8f; border-color: #52b788; color: white; }
+
+        .buscador-contenedor { position: relative; max-width: 380px; margin: 20px auto; }
+        .tabla-intentos { width: 100%; max-width: 720px; margin: 20px auto; border-collapse: separate; border-spacing: 8px; }
+        .tabla-intentos th { background: linear-gradient(180deg, #ffaa00 0%, #ff6600 100%); color: #ffffff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); border: 2px solid #ffd166; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4); font-weight: bold; padding: 10px 6px; border-radius: 8px; font-size: 14px; }
+        .tabla-intentos td { padding: 8px 4px; border-radius: 8px; font-weight: bold; font-size: 13px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); vertical-align: middle; }
+        .tabla-intentos td img { width: 54px; height: 54px; object-fit: contain; display: block; margin: 0 auto 4px auto; }
+        .tabla-intentos td:first-child img { object-fit: cover; border-radius: 6px; width: 58px; height: 58px; }
+ </style>
 
 </head>
 <body>

@@ -311,7 +311,3 @@ function renderizarHistorialDuelos() {
     });
         contenedor.innerHTML = html;
 }
-
-
-    contenedor.innerHTML = html;
-}

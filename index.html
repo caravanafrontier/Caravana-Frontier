@@ -271,6 +271,49 @@
         </button>
     </div>
 </div>
+<!-- BOTÓN BUSCADOR DE JUGADORES JUNTO A ANUNCIOS -->
+<button onclick="abrirBuscadorEnciclopedia()" style="position: fixed; top: 15px; right: 130px; z-index: 2000; background: #1c2541; color: #4cc9f0; border: 2px solid #4cc9f0; padding: 8px 14px; border-radius: 20px; font-weight: bold; font-size: 13px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    🔍 Busca un jugador
+</button>
+
+<!-- VENTANA MODAL DEL BUSCADOR DE JUGADORES -->
+<div id="modal-enciclopedia" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 19, 43, 0.88); z-index: 3000; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box;">
+    <div style="background: #1c2541; border: 2px solid #4cc9f0; border-radius: 14px; max-width: 420px; width: 100%; padding: 20px; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.7); text-align: center;">
+        <button onclick="cerrarBuscadorEnciclopedia()" style="position: absolute; top: 12px; right: 12px; background: #e63946; color: white; border: none; border-radius: 50%; width: 28px; height: 28px; font-weight: bold; cursor: pointer;">✕</button>
+        
+        <h3 style="color: #4cc9f0; margin: 0 0 12px 0;">🔍 Busca un jugador</h3>
+        
+        <div style="position: relative; margin-bottom: 15px;">
+            <input type="text" id="input-enciclopedia" oninput="filtrarEnciclopedia()" placeholder="Escribe el nombre de un jugador..." autocomplete="off" style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 2px solid #4cc9f0; background: #0b132b; color: white; font-size: 14px; box-sizing: border-box;">
+            <div id="sugerencias-enciclopedia" style="display: none; position: absolute; width: 100%; background: #0b132b; border: 1px solid #4cc9f0; border-top: none; border-radius: 0 0 8px 8px; max-height: 200px; overflow-y: auto; z-index: 3100; text-align: left;"></div>
+        </div>
+
+        <!-- FICHA DEL JUGADOR SELECCIONADO -->
+        <div id="ficha-enciclopedia" style="display: none; background: rgba(11, 19, 43, 0.9); border: 1px solid #3a506b; border-radius: 10px; padding: 15px;">
+            <img id="ficha-foto" src="" alt="" style="width: 110px; height: 110px; object-fit: cover; border-radius: 10px; border: 2px solid #ffb703; margin-bottom: 10px;">
+            <h2 id="ficha-nombre" style="margin: 0 0 12px 0; color: white; font-size: 22px;"></h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; font-size: 13px;">
+                <div style="background: #1c2541; padding: 8px; border-radius: 6px;">
+                    <span style="color: #aaaaaa; display: block; font-size: 11px;">Equipo</span>
+                    <strong id="ficha-equipo" style="color: #4cc9f0;"></strong>
+                </div>
+                <div style="background: #1c2541; padding: 8px; border-radius: 6px;">
+                    <span style="color: #aaaaaa; display: block; font-size: 11px;">Posición</span>
+                    <strong id="ficha-posicion" style="color: #ffb703;"></strong>
+                </div>
+                <div style="background: #1c2541; padding: 8px; border-radius: 6px;">
+                    <span style="color: #aaaaaa; display: block; font-size: 11px;">Elemento</span>
+                    <strong id="ficha-elemento" style="color: #52b788;"></strong>
+                </div>
+                <div style="background: #1c2541; padding: 8px; border-radius: 6px;">
+                    <span style="color: #aaaaaa; display: block; font-size: 11px;">Saga</span>
+                    <strong id="ficha-saga" style="color: #ff9e00;"></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <script src="script.js"></script>

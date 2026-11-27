@@ -309,6 +309,9 @@ function renderizarHistorialDuelos() {
             </div>
         `;
     });
+        contenedor.innerHTML = html;
+}
+
 
     contenedor.innerHTML = html;
 }

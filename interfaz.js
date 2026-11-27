@@ -311,3 +311,58 @@ function renderizarHistorialDuelos() {
     });
         contenedor.innerHTML = html;
 } 
+// ------------------------------------------------------------------
+// ENCICLOPEDIA / BUSCADOR RÁPIDO DE JUGADORES
+// ------------------------------------------------------------------
+function abrirBuscadorEnciclopedia() {
+    document.getElementById("modal-enciclopedia").style.display = "flex";
+    document.getElementById("input-enciclopedia").value = "";
+    document.getElementById("sugerencias-enciclopedia").style.display = "none";
+    document.getElementById("ficha-enciclopedia").style.display = "none";
+    setTimeout(() => document.getElementById("input-enciclopedia").focus(), 100);
+}
+
+function cerrarBuscadorEnciclopedia() {
+    document.getElementById("modal-enciclopedia").style.display = "none";
+}
+
+function filtrarEnciclopedia() {
+    const texto = document.getElementById("input-enciclopedia").value.toLowerCase().trim();
+    const lista = document.getElementById("sugerencias-enciclopedia");
+    lista.innerHTML = "";
+
+    if (!texto || typeof jugadores === "undefined") {
+        lista.style.display = "none";
+        return;
+    }
+
+    const coincidencias = jugadores.filter(j => j.nombre.toLowerCase().includes(texto)).slice(0, 10);
+
+    if (coincidencias.length === 0) {
+        lista.style.display = "none";
+        return;
+    }
+
+    lista.style.display = "block";
+    coincidencias.forEach(j => {
+        const item = document.createElement("div");
+        item.className = "sugerencia-item";
+        item.innerHTML = `<img src="${j.foto}" alt=""><span>${j.nombre}</span>`;
+        item.onclick = () => mostrarFichaJugador(j);
+        lista.appendChild(item);
+    });
+}
+
+function mostrarFichaJugador(j) {
+    document.getElementById("sugerencias-enciclopedia").style.display = "none";
+    document.getElementById("input-enciclopedia").value = j.nombre;
+
+    document.getElementById("ficha-foto").src = j.foto || "";
+    document.getElementById("ficha-nombre").innerText = j.nombre;
+    document.getElementById("ficha-equipo").innerText = j.equipo || "Desconocido";
+    document.getElementById("ficha-posicion").innerText = j.posicion || "Desconocida";
+    document.getElementById("ficha-elemento").innerText = j.elemento || "Desconocido";
+    document.getElementById("ficha-saga").innerText = j.saga || "Inazuma Eleven";
+
+    document.getElementById("ficha-enciclopedia").style.display = "block";
+}

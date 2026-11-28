@@ -456,7 +456,7 @@ function inicializarCalendarioDias() {
     for (let i = 1; i <= 30; i++) {
         const btn = document.createElement("button");
         btn.className = "btn-dia";
-        btn.innerText = `Día ${i}`;
+        btn.innerText = `Nivel ${i}`;
                if (diasCompletados.includes(i)) btn.classList.add("completado");
         btn.id = `btn-dia-${i}`;
         btn.addEventListener("click", () => {
@@ -479,7 +479,7 @@ function seleccionarDiaJuego(dia) {
     if (diasCompletados.includes(dia)) {
         document.getElementById("alerta-victoria").style.display = "block";
         document.getElementById("contenedor-buscador-juego").style.display = "none";
-        document.getElementById("instrucciones-juego").innerText = `✅ Día ${dia} completado. El jugador era ${jugadorSecreto.nombre}.`;
+       document.getElementById("instrucciones-juego").innerText = `✅ Nivel ${dia} completado. El jugador era ${jugadorSecreto.nombre}.`;
         if (typeof registrarJugadorAdivinado === "function") registrarJugadorAdivinado(jugadorSecreto.nombre);
 
         const nombresGuardados = historialPorDia[dia] || [];
@@ -493,9 +493,7 @@ function seleccionarDiaJuego(dia) {
     if (document.getElementById("buscador")) document.getElementById("buscador").disabled = false;
     document.getElementById("alerta-victoria").style.display = "none";
     document.getElementById("contenedor-buscador-juego").style.display = "block";
-    document.getElementById("instrucciones-juego").innerText = `⚽ Reto del Día ${dia} activado. ¡Intenta adivinarlo!`;
-}
-
+document.getElementById("instrucciones-juego").innerText = `⚽ Nivel ${dia} activado. ¡Intenta adivinarlo!`;
 
 window.onload = function() {
        generarRetosAleatorios();

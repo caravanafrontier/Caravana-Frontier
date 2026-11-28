@@ -371,4 +371,86 @@ function mostrarFichaJugador(j) {
 
     document.getElementById("ficha-enciclopedia").style.display = "block";
 }
+// ------------------------------------------------------------------
+// ÁLBUM DE COLECCIÓN POR EQUIPOS (CON SILUETAS NEGRAS)
+// ------------------------------------------------------------------
+let listaEquiposColeccion = [];
+let paginaActualColeccion = 0;
+
+function obtenerAdivinadosGuardados() {
+    return JSON.parse(localStorage.getItem("caravana_coleccion_adivinados")) || [];
+}
+
+function registrarJugadorAdivinado(nombreJugador) {
+    if (!nombreJugador) return;
+    let adivinados = obtenerAdivinadosGuardados();
+    if (!adivinados.includes(nombreJugador)) {
+        adivinados.push(nombreJugador);
+        localStorage.setItem("caravana_coleccion_adivinados", JSON.stringify(adivinados));
+    }
+}
+
+function abrirColeccion() {
+    if (typeof jugadores === "undefined" || !Array.isArray(jugadores)) return;
+
+    const equiposUnicos = [];
+    jugadores.forEach(j => {
+        if (j.equipo && !equiposUnicos.some(e => e.nombre === j.equipo)) {
+            equiposUnicos.push({ nombre: j.equipo, logo: j.logoEquipo || "" });
+        }
+    });
+
+    listaEquiposColeccion = equiposUnicos;
+    paginaActualColeccion = 0;
+    document.getElementById("modal-coleccion").style.display = "flex";
+    renderizarPaginaColeccion();
+}
+
+function cerrarColeccion() {
+    document.getElementById("modal-coleccion").style.display = "none";
+}
+
+function cambiarPaginaColeccion(direccion) {
+    if (listaEquiposColeccion.length === 0) return;
+    paginaActualColeccion += direccion;
+    if (paginaActualColeccion < 0) paginaActualColeccion = listaEquiposColeccion.length - 1;
+    if (paginaActualColeccion >= listaEquiposColeccion.length) paginaActualColeccion = 0;
+    renderizarPaginaColeccion();
+}
+
+function renderizarPaginaColeccion() {
+    const adivinados = obtenerAdivinadosGuardados();
+    document.getElementById("progreso-coleccion-global").innerText = "Jugadores desbloqueados: " + adivinados.length + " / " + jugadores.length;
+
+    const equipoActual = listaEquiposColeccion[paginaActualColeccion];
+    document.getElementById("coleccion-nombre-equipo").innerText = equipoActual.nombre;
+    document.getElementById("coleccion-logo-equipo").src = equipoActual.logo;
+    document.getElementById("coleccion-paginacion").innerText = "Página " + (paginaActualColeccion + 1) + " de " + listaEquiposColeccion.length;
+
+    const jugadoresDelEquipo = jugadores.filter(j => j.equipo === equipoActual.nombre);
+    const grid = document.getElementById("grid-cromos-equipo");
+    grid.innerHTML = "";
+
+    jugadoresDelEquipo.forEach(j => {
+        const desbloqueado = adivinados.includes(j.nombre);
+        const cromo = document.createElement("div");
+        cromo.style.background = desbloqueado ? "rgba(28, 37, 65, 0.95)" : "rgba(11, 19, 43, 0.75)";
+        cromo.style.border = desbloqueado ? "2px solid #ffb703" : "2px dashed #3a506b";
+        cromo.style.borderRadius = "10px";
+        cromo.style.padding = "8px";
+        cromo.style.textAlign = "center";
+
+        const estiloImg = desbloqueado
+            ? "width: 72px; height: 72px; object-fit: cover; border-radius: 8px; margin-bottom: 6px;"
+            : "width: 72px; height: 72px; object-fit: cover; border-radius: 8px; margin-bottom: 6px; filter: brightness(0) drop-shadow(0 0 3px rgba(76, 201, 240, 0.6));";
+
+        const nombreMostrar = desbloqueado ? j.nombre : "???";
+        const colorTexto = desbloqueado ? "#ffffff" : "#6c757d";
+
+        cromo.innerHTML = '<img src="' + (j.foto || "") + '" style="' + estiloImg + '">' +
+            '<div style="font-size: 12px; font-weight: bold; color: ' + colorTexto + '; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + nombreMostrar + '</div>';
+
+        grid.appendChild(cromo);
+    });
+}
 

@@ -198,7 +198,7 @@ const duelosPersonalizados = [
     { jugador1: "Seymour Hillman", p1: 62, jugador2: "Paul Siddon", p2: 38 },
     { jugador1: "Nigel August", p1: 51, jugador2: "Grant Cook", p2: 49 },
     { jugador1: "Shadow Cimmerian", p1: 53, jugador2: "William Glass", p2: 47 },
-        { jugador1: "Xavier Foster", p1: 58, jugador2: "Axel Blaze", p2: 42 },
+    { jugador1: "Xavier Foster", p1: 58, jugador2: "Axel Blaze", p2: 42 },
     { jugador1: "Bryce Whitingale", p1: 69, jugador2: "Hurley Kane", p2: 31 },
     { jugador1: "Shawn Froste", p1: 76, jugador2: "Victoria Vanguard", p2: 24 },
     { jugador1: "Isabelle Trick", p1: 68, jugador2: "Jordan Greenway", p2: 32 },

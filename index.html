@@ -70,9 +70,13 @@
         .tabla-intentos td { padding: 8px 4px; border-radius: 8px; font-weight: bold; font-size: 13px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); vertical-align: middle; }
         .tabla-intentos td img { width: 54px; height: 54px; object-fit: contain; display: block; margin: 0 auto 4px auto; }
         .tabla-intentos td:first-child img { object-fit: cover; border-radius: 6px; width: 58px; height: 58px; }
-                  .mensaje-victoria, .mensaje-bloqueado, #alerta-victoria, #alerta-bloqueado { display: none; }
+                      .mensaje-victoria, .mensaje-bloqueado, .aviso-bloqueado, #alerta-victoria, #alerta-bloqueado, #aviso-modo-bloqueado { display: none; }
+        .grid-buscadores { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px; }
+        .slot-jugador { position: relative; background: rgba(11, 19, 43, 0.92); border: 2px solid #4cc9f0; border-radius: 10px; padding: 10px; width: 145px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .vista-foto-slot { width: 65px; height: 65px; margin: 0 auto 8px auto; background: #1c2541; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: #4cc9f0; overflow: hidden; border: 1px solid #3a506b; }
+        .busc-campo { width: 100%; padding: 6px; border-radius: 6px; border: 1px solid #4cc9f0; background: #0b132b; color: white; font-size: 12px; box-sizing: border-box; text-align: center; }
+        .sugerencias-campo { position: absolute; left: 0; right: 0; top: 100%; background: #0b132b; border: 1px solid #4cc9f0; border-radius: 0 0 8px 8px; max-height: 150px; overflow-y: auto; z-index: 1000; text-align: left; }
 
- </style>
 
 </head>
 <body>

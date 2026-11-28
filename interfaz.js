@@ -366,3 +366,4 @@ function mostrarFichaJugador(j) {
 
     document.getElementById("ficha-enciclopedia").style.display = "block";
 }
+}

@@ -510,7 +510,7 @@ if (buscador) {
         sugerenciasDiv.innerHTML = "";
         if (!texto) return;
 
-          const filtrados = jugadores.filter(j => j.nombre.toLowerCase().includes(texto) && !jugadoresIntentados.includes(j.nombre));
+          const filtrados = jugadores.filter(j => (typeof coincideConAlias === "function" ? coincideConAlias(j.nombre, texto) : j.nombre.toLowerCase().includes(texto)) && !jugadoresIntentados.includes(j.nombre));
         
         filtrados.forEach(j => {
             const div = document.createElement("div");

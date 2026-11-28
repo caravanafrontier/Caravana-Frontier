@@ -88,29 +88,64 @@
     <img src="caravana.png" alt="Caravana Frontier" class="logo-principal">
     <p class="subtitulo" style="color: #cbd5e1; font-size: 15px; margin-top: 6px;">Demuestra cuánto sabes del universo <strong>Inazuma Eleven</strong> • Elige un modo</p>
 
-    <div id="pantalla-menu">
+      <div id="pantalla-menu">
+        <!-- 1. ADIVINAR JUGADOR (Silueta real de Mark Evans) -->
         <button class="btn-modo" onclick="mostrarModo('adivinar-jugador')">
-                  <img src="s.png" alt="Adivinar Jugador">
+            <div style="width: 100%; height: 130px; border-radius: 8px; margin-bottom: 12px; background: radial-gradient(circle, #1d4e89 0%, #0b132b 100%); border: 1px solid #3a506b; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <img src="mark.webp" alt="Adivinar Jugador" style="width: 95px; height: 95px; object-fit: cover; border: none; background: transparent; margin: 0; filter: brightness(0) drop-shadow(0 0 8px #ffb703);">
+                <span style="position: absolute; font-size: 46px; font-weight: 900; color: #ffb703; text-shadow: 0 2px 10px rgba(0,0,0,0.9);">?</span>
+            </div>
             <span>⚽ Adivinar Jugador</span>
         </button>
+
+        <!-- 2. CREADOR DE EQUIPOS (Pizarra táctica con jugadores reales) -->
         <button class="btn-modo" onclick="mostrarModo('crear-equipo')">
-              <img src="lala.png" alt="Creador de Equipos">
+            <div style="width: 100%; height: 130px; border-radius: 8px; margin-bottom: 12px; background: linear-gradient(180deg, #1b4332 0%, #2d6a4f 50%, #1b4332 100%); border: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: space-around; align-items: center; padding: 6px; box-sizing: border-box; position: relative;">
+                <div style="position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.35);"></div>
+                <div style="display: flex; gap: 18px; z-index: 1;">
+                    <img src="axel.webp" style="width: 34px; height: 34px; border-radius: 50%; border: 2px solid #ffb703; margin: 0; background: #0b132b;">
+                    <img src="shawn.webp" style="width: 34px; height: 34px; border-radius: 50%; border: 2px solid #ffb703; margin: 0; background: #0b132b;">
+                </div>
+                <div style="display: flex; gap: 28px; z-index: 1;">
+                    <img src="jude.webp" style="width: 34px; height: 34px; border-radius: 50%; border: 2px solid #4cc9f0; margin: 0; background: #0b132b;">
+                    <img src="erik.webp" style="width: 34px; height: 34px; border-radius: 50%; border: 2px solid #4cc9f0; margin: 0; background: #0b132b;">
+                </div>
+                <img src="mark.webp" style="width: 34px; height: 34px; border-radius: 50%; border: 2px solid #ff9e00; margin: 0; background: #0b132b; z-index: 1;">
+            </div>
             <span>📋 Creador de Equipos</span>
         </button>
+
+        <!-- 3. ADIVINAR SUPERTÉCNICA (Fuego + Emblema elemental) -->
         <button class="btn-modo" onclick="mostrarModo('adivinar-tecnica')">
-        <img src="xd.png" alt="Adivinar Supertécnica">
+            <div style="width: 100%; height: 130px; border-radius: 8px; margin-bottom: 12px; background: radial-gradient(circle, #9d0208 0%, #370617 70%, #0b132b 100%); border: 1px solid #3a506b; display: flex; align-items: center; justify-content: center; position: relative;">
+                <img src="Fuego.webp" alt="Supertécnica" style="width: 72px; height: 72px; object-fit: contain; border: none; background: transparent; margin: 0; filter: drop-shadow(0 0 12px #ffba08);">
+                <span style="position: absolute; bottom: 8px; right: 12px; font-size: 28px; font-weight: 900; color: #ffba08; text-shadow: 0 2px 6px #000;">⚡?</span>
+            </div>
             <span>⚡ Adivinar Supertécnica</span>
-            </button>
-              <button class="btn-modo" onclick="mostrarModo('duelos')">
-                  <img src="ala.png" alt="¿Quién es mejor?">
-            <span>⚔️ ¿Quién es mejor?</span>
-        </button>
-                <button class="btn-modo">
-            <img src="rero.png" alt="Conexiones">
-            <span>🧩 Conexiones</span>
         </button>
 
+        <!-- 4. ¿QUIÉN ES MEJOR? (Duelo Axel vs Shawn) -->
+        <button class="btn-modo" onclick="mostrarModo('duelos')">
+            <div style="width: 100%; height: 130px; border-radius: 8px; margin-bottom: 12px; background: linear-gradient(90deg, #6a040f 0%, #0b132b 50%, #023e8a 100%); border: 1px solid #3a506b; display: flex; align-items: center; justify-content: space-around; padding: 0 8px; box-sizing: border-box; position: relative;">
+                <img src="axel.webp" alt="Axel" style="width: 72px; height: 72px; border-radius: 10px; border: 2px solid #ffba08; margin: 0; background: #0b132b;">
+                <span style="font-size: 24px; font-weight: 900; color: #ffb703; text-shadow: 0 0 10px #ff9e00; z-index: 1;">VS</span>
+                <img src="shawn.webp" alt="Shawn" style="width: 72px; height: 72px; border-radius: 10px; border: 2px solid #90e0ef; margin: 0; background: #0b132b;">
+            </div>
+            <span>⚔️ ¿Quién es mejor?</span>
+        </button>
+
+        <!-- 5. CONEXIONES (Escudos de equipos conectados) -->
+        <button class="btn-modo">
+            <div style="width: 100%; height: 130px; border-radius: 8px; margin-bottom: 12px; background: radial-gradient(circle, #1c2541 0%, #0b132b 100%); border: 1px solid #3a506b; display: grid; grid-template-columns: 1fr 1fr; place-items: center; padding: 10px 24px; box-sizing: border-box; position: relative;">
+                <img src="logo_raimon.webp" style="width: 44px; height: 44px; object-fit: contain; border: none; background: transparent; margin: 0;">
+                <img src="logo_royal.webp" style="width: 44px; height: 44px; object-fit: contain; border: none; background: transparent; margin: 0;">
+                <img src="logo_zeus.webp" style="width: 44px; height: 44px; object-fit: contain; border: none; background: transparent; margin: 0;">
+                <img src="logo_epsilon.webp" style="width: 44px; height: 44px; object-fit: contain; border: none; background: transparent; margin: 0;">
+            </div>
+            <span>🧩 Conexiones</span>
+        </button>
     </div>
+
 
     <!-- MODO 1: ADIVINAR JUGADOR -->
     <div id="pantalla-juego">

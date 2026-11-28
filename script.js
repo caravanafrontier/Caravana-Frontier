@@ -483,6 +483,7 @@ function seleccionarDiaJuego(dia) {
         document.getElementById("alerta-victoria").style.display = "block";
         document.getElementById("contenedor-buscador-juego").style.display = "none";
         document.getElementById("instrucciones-juego").innerText = `✅ Día ${dia} completado. El jugador era ${jugadorSecreto.nombre}.`;
+ Aif (typeof registrarJugadorAdivinado === "function") registrarJugadorAdivinado(jugadorSecreto.nombre);
 
         const nombresGuardados = historialPorDia[dia] || [];
         nombresGuardados.forEach(nombre => {
@@ -540,6 +541,7 @@ function comprobarJugador(jugador) {
 
     if (jugador.nombre === jugadorSecreto.nombre) {
         document.getElementById("alerta-victoria").style.display = "block";
+               if (typeof registrarJugadorAdivinado === "function") registrarJugadorAdivinado(jugadorSecreto.nombre);
         const btnGanado = document.getElementById(`btn-dia-${diaSeleccionado}`);
         if (btnGanado) btnGanado.classList.add("completado");
         const cajaInput = document.getElementById("buscador");

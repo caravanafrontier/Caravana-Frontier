@@ -5,7 +5,7 @@ var jugadores = [
     { nombre: "Nathan Swift", equipo: "Raimon", posicion: "Defensa", elemento: "Viento", foto: "nathan.webp", logoEquipo: "logo_raimon.webp", logoPosicion: "DF.webp", logoElemento: "Aire.webp" },
     { nombre: "Jack Wallside", equipo: "Raimon", posicion: "Defensa", elemento: "Tierra", foto: "jack.webp", logoEquipo: "logo_raimon.webp", logoPosicion: "DF.webp", logoElemento: "Tierra.webp" },
 { nombre: "Shawn Froste", equipo: "Alpino", posicion: "Delantero", elemento: "Viento", saga: "IE2", foto: "shawn.webp", logoEquipo: "logo_alpino.webp", logoPosicion: "DL.webp", logoElemento: "Aire.webp", logoSaga: "logo_ie2.webp" },
-    { nombre: "Byron Love", equipo: "Zeus", posicion: "Delantero", elemento: "Bosque", foto: "byron.webp", logoEquipo: "logo_zeus.webp", logoPosicion: "DL.webp", logoElemento: "Bosque.webp" },
+    { nombre: "Byron Love", equipo: "Instituto Zeus", posicion: "Delantero", elemento: "Bosque", foto: "byron.webp", logoEquipo: "logo_zeus.webp", logoPosicion: "DL.webp", logoElemento: "Bosque.webp" },
      { nombre: "Xene", equipo: "Génesis", posicion: "Delantero", elemento: "Fuego", foto: "xene.webp", logoEquipo: "logo_genesis.webp", logoPosicion: "DL.webp", logoElemento: "Fuego.webp", saga: "IE2", logoSaga: "saga_ie2.webp" },
     { nombre: "David Samford", equipo: "Royal Academy", posicion: "Delantero", elemento: "Bosque", foto: "david.webp", logoEquipo: "logo_royal.webp", logoPosicion: "DL.webp", logoElemento: "Bosque.webp" },
     { nombre: "Joseph King", equipo: "Royal Academy", posicion: "Portero", elemento: "Fuego", foto: "joseph.webp", logoEquipo: "logo_royal.webp", logoPosicion: "PR.webp", logoElemento: "Fuego.webp" },

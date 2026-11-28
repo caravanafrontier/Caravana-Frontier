@@ -153,7 +153,7 @@ function activarBuscadoresCampo() {
         });
     });
 }
-
+}
 function exportarAlineacion() {
     const nombreEquipo = document.getElementById("input-nombre-equipo").value || "Mi Equipo Ideal";
     const entrenadorSelect = document.getElementById("select-entrenador").value;
@@ -366,4 +366,4 @@ function mostrarFichaJugador(j) {
 
     document.getElementById("ficha-enciclopedia").style.display = "block";
 }
-}
+

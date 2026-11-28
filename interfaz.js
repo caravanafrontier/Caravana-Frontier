@@ -347,7 +347,7 @@ function filtrarEnciclopedia() {
     coincidencias.forEach(j => {
         const item = document.createElement("div");
         item.className = "sugerencia-item";
-        item.innerHTML = `<img src="${j.foto}" alt=""><span>${j.nombre}</span>`;
+   item.innerHTML = '<img src="' + j.foto + '" alt=""><span>' + j.nombre + '</span>';;
         item.onclick = () => mostrarFichaJugador(j);
         lista.appendChild(item);
     });

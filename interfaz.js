@@ -362,7 +362,12 @@ function mostrarFichaJugador(j) {
     document.getElementById("ficha-equipo").innerText = j.equipo || "Desconocido";
     document.getElementById("ficha-posicion").innerText = j.posicion || "Desconocida";
     document.getElementById("ficha-elemento").innerText = j.elemento || "Desconocido";
-    document.getElementById("ficha-saga").innerText = j.saga || "Inazuma Eleven";
+        let nombreSaga = j.saga || "Inazuma Eleven";
+    if (nombreSaga === "IE1") nombreSaga = "Inazuma Eleven";
+    if (nombreSaga === "IE2") nombreSaga = "Inazuma Eleven 2";
+    if (nombreSaga === "IE3") nombreSaga = "Inazuma Eleven 3";
+    document.getElementById("ficha-saga").innerText = nombreSaga;
+
 
     document.getElementById("ficha-enciclopedia").style.display = "block";
 }

@@ -197,7 +197,23 @@ const duelosPersonalizados = [
     { jugador1: "Marvin Murdock", p1: 52, jugador2: "Thomas Murdock", p2: 48 },
     { jugador1: "Seymour Hillman", p1: 62, jugador2: "Paul Siddon", p2: 38 },
     { jugador1: "Nigel August", p1: 51, jugador2: "Grant Cook", p2: 49 },
-    { jugador1: "Shadow Cimmerian", p1: 53, jugador2: "William Glass", p2: 47 }
+    { jugador1: "Shadow Cimmerian", p1: 53, jugador2: "William Glass", p2: 47 },
+        { jugador1: "Xavier Foster", p1: 58, jugador2: "Axel Blaze", p2: 42 },
+    { jugador1: "Bryce Whitingale", p1: 69, jugador2: "Hurley Kane", p2: 31 },
+    { jugador1: "Shawn Froste", p1: 76, jugador2: "Victoria Vanguard", p2: 24 },
+    { jugador1: "Isabelle Trick", p1: 68, jugador2: "Jordan Greenway", p2: 32 },
+    { jugador1: "Dave Quagmire", p1: 64, jugador2: "Darren LaChance", p2: 36 },
+    { jugador1: "Byron Love", p1: 61, jugador2: "Caleb Stonewall", p2: 39 },
+    { jugador1: "Claude Beacons", p1: 72, jugador2: "Scott Banyan", p2: 28 },
+    { jugador1: "Mark Evans", p1: 79, jugador2: "Thomas Feldt", p2: 21 },
+    { jugador1: "Jude Sharp", p1: 82, jugador2: "Suzette Hartland", p2: 18 },
+    { jugador1: "Nathan Swift", p1: 67, jugador2: "Erik Eagle", p2: 33 },
+    { jugador1: "David Samford", p1: 71, jugador2: "Tod Ironside", p2: 29 },
+    { jugador1: "Zeke Valanche", p1: 63, jugador2: "Kevin Dragonfly", p2: 37 },
+    { jugador1: "Jack Wallside", p1: 55, jugador2: "Malcolm Night", p2: 45 },
+    { jugador1: "Shadow Cimmerian", p1: 66, jugador2: "Steve Grim", p2: 34 },
+    { jugador1: "Nelson Rockwell", p1: 74, jugador2: "Albert Denver", p2: 26 }
+
 ];
 
 let votosDuelosGuardados = JSON.parse(localStorage.getItem("caravana_votos_duelos")) || [];

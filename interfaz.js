@@ -110,7 +110,7 @@ function activarBuscadoresCampo() {
             // Filtra los personajes globales de script.js
             const filtrados = jugadores.filter(j => 
                 j.posicion === posRequerida && 
-                j.nombre.toLowerCase().includes(texto)
+                              coincideConAlias(j.nombre, texto)
             );
 
             if (filtrados.length === 0) {
@@ -352,7 +352,7 @@ function filtrarEnciclopedia() {
         return;
     }
 
-    const coincidencias = jugadores.filter(j => j.nombre.toLowerCase().includes(texto)).slice(0, 10);
+  const coincidencias = jugadores.filter(j => coincideConAlias(j.nombre, texto)).slice(0, 10);
 
     if (coincidencias.length === 0) {
         lista.style.display = "none";
@@ -468,5 +468,110 @@ function renderizarPaginaColeccion() {
 
         grid.appendChild(cromo);
     });
+}
+// ------------------------------------------------------------------
+// DICCIONARIO COMPLETO DE ALIAS (ZEUS Y ACADEMIA ALIUS)
+// ------------------------------------------------------------------
+const aliasJugadores = {
+    // --- INSTITUTO ZEUS ---
+    "byron love": ["aphrodite"], "aphrodite": ["byron love"],
+    "henry house": ["poseidon"], "poseidon": ["henry house"],
+    "artie misc": ["artemis"], "artemis": ["artie misc"],
+    "lane war": ["ares"], "ares": ["lane war"],
+    "danny wood": ["dionysus"], "dionysus": ["danny wood"],
+    "jeff iron": ["hephaestus", "hephestus"], "hephaestus": ["jeff iron"], "hephestus": ["jeff iron"],
+    "andy chronic": ["chronos"], "chronos": ["andy chronic"],
+    "paul siddon": ["apollo"], "apollo": ["paul siddon"],
+    "phil wingate": ["hermes"], "hermes": ["phil wingate"],
+    "jonas demetrius": ["demeter"], "demeter": ["jonas demetrius"],
+    "wesley knox": ["hera"], "hera": ["wesley knox"],
+    "sammy silvers": ["hermes"], "troy stump": ["athena"], "athena": ["troy stump"],
+    "gus heeley": ["heracles"], "heracles": ["gus heeley"],
+    "arthur sweet": ["icarus"], "icarus": ["arthur sweet"],
+    "charlie chatter": ["achilles"], "achilles": ["charlie chatter"],
+    "neddy newman": ["medusa"], "medusa": ["neddy newman"],
+
+    // --- TORMENTA DE GÉMINIS ---
+    "jordan greenway": ["janus"], "janus": ["jordan greenway"],
+    "galen griffin": ["galileo"], "galileo": ["galen griffin"],
+    "cora clarke": ["coral"], "coral": ["cora clarke"],
+    "gigi giles": ["gig"], "gig": ["gigi giles"],
+    "ganny gatt": ["ganymede"], "ganymede": ["ganny gatt"],
+    "charlie charon": ["charon"], "charon": ["charlie charon"],
+    "pandora box": ["pandora"], "pandora": ["pandora box"],
+    "gregory gringo": ["gringo"], "gringo": ["gregory gringo"],
+    "ian oswald": ["io"], "io": ["ian oswald"],
+    "rihanna rihm": ["rihm"], "rihm": ["rihanna rihm"],
+    "damian diam": ["diam"], "diam": ["damian diam"],
+
+    // --- ÉPSILON ---
+    "dave quagmire": ["dvalin"], "dvalin": ["dave quagmire"],
+    "craven kenville": ["kenville"], "kenville": ["craven kenville"],
+    "anna mole": ["mole"], "mole": ["anna mole"],
+    "kayson wattever": ["kayson"], "kayson": ["kayson wattever"],
+    "chris tytan": ["tytan"], "tytan": ["chris tytan"],
+    "fedora": ["faye fedora"], "faye fedora": ["fedora"],
+    "kayson watters": ["krypto"], "krypto": ["kayson watters"],
+    "stuart sworm": ["sworm"], "sworm": ["stuart sworm"],
+    "carrie mccuring": ["mercury"], "mercury": ["carrie mccuring"],
+    "grant cook": ["metron"], "metron": ["grant cook"],
+    "sean pierce": ["zell", "zel"], "zell": ["sean pierce"], "zel": ["sean pierce"],
+    "karen ripton": ["karen"], "karen": ["karen ripton"],
+
+    // --- DIAMOND DUST ---
+    "bryce whitingale": ["gazelle"], "gazelle": ["bryce whitingale"],
+    "benjamin beluga": ["beluga"], "beluga": ["benjamin beluga"],
+    "albert denver": ["arkew"], "arkew": ["albert denver"],
+    "claire lesnow": ["clear"], "clear": ["claire lesnow"],
+    "gordon gocker": ["gocker"], "gocker": ["gordon gocker"],
+    "irene icer": ["icer"], "icer": ["irene icer"],
+    "barry balen": ["balen"], "balen": ["barry balen"],
+    "danny droll": ["droll"], "droll": ["danny droll"],
+    "rachel rhine": ["rhine"], "rhine": ["rachel rhine"],
+    "bobby blown": ["blown"], "blown": ["bobby blown"],
+    "freddy frost": ["frost"], "frost": ["freddy frost"],
+
+    // --- PROMINENCE ---
+    "claude beacons": ["torch"], "torch": ["claude beacons"],
+    "graham grent": ["grent"], "grent": ["graham grent"],
+    "barry barra": ["barra"], "barra": ["barry barra"],
+    "bruce bakurei": ["bakurei"], "bakurei": ["bruce bakurei"],
+    "sammy satos": ["satos"], "satos": ["sammy satos"],
+    "benny bomber": ["bomber"], "bomber": ["benny bomber"],
+    "henry heat": ["heat"], "heat": ["henry heat"],
+    "rebecca rean": ["rean"], "rean": ["rebecca rean"],
+    "bonnie bonitona": ["bonitona"], "bonitona": ["bonnie bonitona"],
+    "sidney siden": ["siden"], "siden": ["sidney siden"],
+    "nigel august": ["nepper"], "nepper": ["nigel august"],
+    "ben north": ["boven"], "boven": ["ben north"],
+
+    // --- GÉNESIS ---
+    "xavier foster": ["xene"], "xene": ["xavier foster"],
+    "isabelle trick": ["bellatrix"], "bellatrix": ["isabelle trick"],
+    "nelson rockwell": ["nero"], "nero": ["nelson rockwell"],
+    "zeke valanche": ["wittz"], "wittz": ["zeke valanche"],
+    "george gele": ["gele"], "gele": ["george gele"],
+    "kevin kiburn": ["kiburn"], "kiburn": ["kevin kiburn"],
+    "zack zohen": ["zohen"], "zohen": ["zack zohen"],
+    "harry hauser": ["hauser"], "hauser": ["harry hauser"],
+    "kenneth kormer": ["kormer"], "kormer": ["kenneth kormer"],
+    "kathy kiwill": ["kiwill"], "kiwill": ["kathy kiwill"],
+    "arthur ark": ["ark"], "ark": ["arthur ark"]
+};
+
+function coincideConAlias(nombreJugador, textoBuscado) {
+    const nom = nombreJugador.toLowerCase();
+    const txt = textoBuscado.toLowerCase().trim();
+    if (!txt) return false;
+    if (nom.includes(txt)) return true;
+
+    for (const [clave, listaAlias] of Object.entries(aliasJugadores)) {
+        if (nom.includes(clave.trim())) {
+            if (listaAlias.some(alias => alias.includes(txt) || txt.includes(alias))) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
